@@ -1,0 +1,417 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "pixel-retroui/dist/index.css";
+
+@font-face {
+  font-family: "Minecraft";
+  src: url("/assets/fonts/Minecrafter-Reg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MinecraftAlt";
+  src: url("/assets/fonts/Minecrafter-Alt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Applying the custom font globally */
+body {
+  font-family: "MyFont", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Keyframes for smooth background movement */
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0; /* Start at the left */
+  }
+  50% {
+    background-position: 100% 0; /* Move to the right */
+  }
+  100% {
+    background-position: 0 0; /* Seamlessly return to the start */
+  }
+}
+
+/* Apply background properties */
+body {
+  background-image: url("/assets/images/day-background.jpg"),
+    url("/assets/images/day-background.jpg"); /* Duplicate the background image for seamless repeat */
+  background-size: cover; /* Ensure it covers the entire viewport */
+  background-repeat: no-repeat; /* No repeat, we handle this with multiple images */
+  background-position: 0 0, 100% 0; /* Start the two images at different positions */
+  height: 100vh; /* Full viewport height */
+  font-family: "Pixelify Sans", Arial, Helvetica, sans-serif;
+  animation: moveBackground 5s linear infinite; /* Animate the background */
+}
+
+.main-container {
+  max-width: 350px;
+}
+h1 {
+  font-family: "MinecraftAlt", sans-serif;
+  color: yellow;
+  margin-bottom: 1rem;
+  text-shadow: 
+    1px 1px 0 #000,
+    2px 2px 0 #000,
+    3px 3px 0 #000,
+    4px 4px 0 #000,
+    5px 5px 0 #000,
+    6px 6px 0 #000,
+    7px 7px 0 #000,
+    8px 8px 0 #000; /* Blocky shadow layers for 8-bit look */
+  animation: fadeInUp 1s ease-out;
+  animation-delay: 0.35s; /* Slight delay */
+  opacity: 0; /* Start hidden */
+  visibility: hidden; /* Keep element hidden until animation starts */
+  animation-fill-mode: forwards; /* Ensure element stays visible after animation */
+}
+
+.main-paragraph {
+  font-family: "MinecraftAlt", sans-serif;
+  font-size: 1.4em;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: zx 2px 0 #000;
+  margin-bottom: 1rem;
+  text-shadow: -2px -2px 0px black, 2px -2px 0px black, -2px 2px 0px black,
+    2px 2px 0px black; /* Stroke-like effect using text-shadow */
+  animation: fadeInUp 1s ease-out;
+  opacity: 0; /* Start hidden */
+  visibility: hidden; /* Keep element hidden until animation starts */
+  animation-fill-mode: forwards; /* Ensure element stays visible after animation */
+}
+/* styles/Login.module.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  padding: 40px;
+  border-radius: 15px;
+  animation: slideIn 0.5s ease-out;
+}
+
+input {
+  font-family: "Pixelify Sans", Arial, sans-serif;
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.label-text {
+  font-size: 1.2em;
+  padding: 10px;
+}
+
+input {
+  width: 300px;
+}
+
+.login-inpuut {
+  width: 300px;
+}
+input:focus {
+  outline: none;
+  border-color: #ff63b1;
+}
+
+.submitBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff63b1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.backBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.submitBtn:hover {
+  transform: scale(1.05);
+}
+
+/* Global or within a specific CSS file, if you need custom styles */
+.text-blue-500 {
+  color: #3b82f6;
+}
+
+.text-purple-600 {
+  color: #7e3af2;
+}
+
+.hover\:text-purple-600:hover {
+  color: #7e3af2; /* Purple color on hover */
+}
+
+.transition-colors {
+  transition: color 0.3s ease;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.space-x-2 {
+  gap: 0.5rem; /* Spacing between text and arrow */
+}
+
+.mt-4 {
+  margin-top: 1rem; /* Add space between the links */
+}
+
+.main-buttons-container {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  border: 5px solid rgba(255, 255, 255, 1); /* Blue border (stroke) */
+
+  animation: fadeInUp 1s ease-out;
+  animation-delay: 0.8s; /* Slight delay after paragraph */
+  opacity: 0; /* Start hidden */
+  visibility: hidden; /* Keep element hidden until animation starts */
+  animation-fill-mode: forwards; /* Ensure element stays visible after animation */
+}
+
+/* Intro Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below */
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* End at the original position */
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #ff63b1, 0 0 10px #ff63b1, 0 0 15px #ff63b1;
+  }
+  50% {
+    text-shadow: 0 0 20px #ff63b1, 0 0 30px #ff63b1, 0 0 40px #ff63b1;
+  }
+  100% {
+    text-shadow: 0 0 5px #ff63b1, 0 0 10px #ff63b1, 0 0 15px #ff63b1;
+  }
+}
+
+@keyframes glow-green {
+  0% {
+    text-shadow: 0 0 5px #90ee90, 0 0 10px #90ee90, 0 0 15px #90ee90;
+  }
+  50% {
+    text-shadow: 0 0 20px #90ee90, 0 0 30px #90ee90, 0 0 40px #90ee90;
+  }
+  100% {
+    text-shadow: 0 0 5px #90ee90, 0 0 10px #90ee90, 0 0 15px #90ee90;
+  }
+}
+
+@keyframes buttonScale {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Glowing effect for buttons */
+.submitBtn,
+.main-buttons-container a Button {
+  animation: fadeIn 1s ease-out;
+}
+
+.submitBtn:hover,
+.main-buttons-container a Button:hover {
+  animation: glow 1.5s infinite alternate;
+}
+
+.label-text {
+  font-family: "MinecraftAlt", sans-serif;
+  font-size: 1em;
+  text-align: center;
+  color: #fff;
+  text-shadow: zx 2px 0 #000;
+  margin-bottom: 0.5rem;
+  text-shadow: -2px -2px 0px black, 2px -2px 0px black, -2px 2px 0px black,
+    2px 2px 0px black; /* Stroke-like effect using text-shadow */
+}
+
+.avatar-maker-container {
+  text-align: center;
+}
+
+.avatar {
+  position: relative;
+  width: 100px;
+  height: 200px;
+  margin: 20px auto;
+}
+
+.head,
+.hairstyle,
+.top,
+.bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.head {
+  height: 50px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+}
+
+.head1 {
+  background-color: #ffcc00; /* Yellow head */
+}
+
+.head2 {
+  background-color: #ff9966; /* Orange head */
+}
+
+.head3 {
+  background-color: #cccccc; /* Grey head */
+}
+
+.hairstyle {
+  height: 20px;
+}
+
+.hairstyle1 {
+  background-color: #000000; /* Black hairstyle */
+}
+
+.hairstyle2 {
+  background-color: #663300; /* Brown hairstyle */
+}
+
+.hairstyle3 {
+  background-color: #ffffff; /* White hairstyle */
+}
+
+.top {
+  height: 30px;
+  background-color: #009900;
+}
+
+.top1 {
+  background-color: #009900; /* Green top */
+}
+
+.top2 {
+  background-color: #ff3300; /* Red top */
+}
+
+.top3 {
+  background-color: #0000ff; /* Blue top */
+}
+
+.bottom {
+  height: 40px;
+  background-color: #0000ff;
+}
+
+.bottom1 {
+  background-color: #0000ff; /* Blue bottom */
+}
+
+.bottom2 {
+  background-color: #cc33cc; /* Purple bottom */
+}
+
+.bottom3 {
+  background-color: #ffff00; /* Yellow bottom */
+}
+
+.controls {
+  margin: 10px 0;
+}
+
+.arrow {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+}
+
+.submitBtn {
+  margin-top: 20px;
+}
